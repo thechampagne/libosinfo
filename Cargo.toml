@@ -1,0 +1,19 @@
+[package]
+name = "osinfo"
+version = "1.0.0"
+description = "A library to detect the operating system type"
+authors = ["XXIV"]
+homepage = "https://github.com/thechampagne/libosinfo"
+repository = "https://github.com/thechampagne/libosinfo"
+readme = "README.md"
+license = "MIT"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "osinfo"
+crate-type =["cdylib","staticlib"]
+
+[dependencies]
+os_info = { version = "3", default-features = false }
