@@ -63,6 +63,10 @@ extern const char* os_info_edition(const os_info_t* os_info);
 extern const char* os_info_codename(const os_info_t* os_info);
 
 extern os_info_bitness_t  os_info_bitness(const os_info_t* os_info);
+
+extern void os_info_clean(os_info_t* os_info);
+
+extern void os_info_string_clean(char* ptr);
 ```
 
 ### References

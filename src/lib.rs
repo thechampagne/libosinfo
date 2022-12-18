@@ -296,3 +296,17 @@ unsafe extern "C" fn os_info_bitness(os_info: *const os_info_t) -> os_info_bitne
 	_ => os_info_bitness_t::OS_INFO_BITNESS_UNKNOWN
     }
 }
+
+#[no_mangle]
+unsafe extern "C" fn os_info_clean(os_info: *mut os_info_t) {
+    if !os_info.is_null() {
+	let _ = Box::from_raw((*os_info).info as *mut Info);
+    }
+}
+
+#[no_mangle]
+unsafe extern "C" fn os_info_string_clean(ptr: *mut c_char) {
+    if !ptr.is_null() {
+	let _ = CString::from_raw(ptr);
+    }
+}
